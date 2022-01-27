@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Odin - To-Do List</title>
+
+
+    <!-- Estilos Adicionais -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/modal.css" rel="stylesheet" type="text/css">
+    <link href="css/table.css" rel="stylesheet" type="text/css">
+
+    <!-- Font-Awesome -->
+    <script src="https://kit.fontawesome.com/086e9cc4d4.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!--MODAL NEW TASK-->
+    <div class="modal" id="new_task" data-db='Tasks'>
+        <div class="modal-header text-start">
+            <span class="titulo_modal">New Task</span>
+            <button type="button" data-close-button class="btn-close">X</button>
+            
+        </div>
+        <div class="modal-body" >
+            <form id='body_new_task'>
+            <div class='column'>
+                <input name="bookId" hidden data-id="id"></input>
+                <label class='titulos-modal'> Task Name: </label>
+                <input name="taskName" class="form-control" data-id="taskName" required >
+                </input>
+            </div>
+            <div class='column'>
+                <label class='titulos-modal'> Project </label>
+                <select name="taskProject" class="form-control" data-id="taskProject" required >
+                </select>
+            </div>
+            <div class='column'>
+                <label class='titulos-modal'> Description </label>
+                <textarea name="taskDescription" class="form-control" data-id="taskDescription" required>
+                </textarea>
+            </div>
+            <div class='column'>
+                <label class='titulos-modal'> Due Date </label>
+                <input name="taskDueDate" type='date' class="form-control" data-id="taskDueDate" required>
+                </input>
+            </div>
+                  <div class='column'>
+                <label class='titulos-modal'> Priority </label>
+                <select name="taskPriority" class="form-control" data-id="taskPriority" >
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-close-modal" data-close-button>Close</button>
+            <button type="button" id='send_form' class="btn-confirm-modal" data-send-button>Save</button>
+        </div>
+    </div>
+
+    <div class="modal" id="new_project"  data-db='Projects'>
+        <div class="modal-header text-start">
+            <span class="titulo_modal">New Project</span>
+            <button type="button" data-close-button class="btn-close">X</button>
+            <input name="bookId" hidden id="bookId"></input>
+        </div>
+        <div class="modal-body">
+            <form id='body_new_project'>
+            <div class='column'>
+                <label class='titulos-modal'> Project Name </label>
+                <input name="projectName" class="form-control" data-id="projectName" required>
+                </input>
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-close-modal" data-close-button>Close</button>
+            <button type="button" id='send_form' class="btn-confirm-modal" data-send-button>Save</button>
+        </div>
+    </div>
+
+    <div id='overlay'></div>
+
+
+
+    <div class="navbar">
+        <span class='titulo'><i class="far fa-check-circle"></i> Odin's Task Manager</span>
+    </div>
+
+
+    <div class='main'>
+        <div class='side-menu '>
+            <span class='sideMenuHeaders'>Tasks</span>
+            <ul>
+                <li><a class='nav-link' id='allTasksButton'> All Tasks</a></li>
+                <li><a class="nav-link" id='todayTaskButton'>Due Today</a></li>
+                <li><a class="nav-link" id='weekTaskButton'>Due This Week</a></li>
+            </ul>
+            <br>
+            <span class='sideMenuHeaders'>Projects</span>
+            <ul id='projetos'>
+
+                <li><a class="nav-link" data-modal-target="#new_project" id='newProjectButton'>New Project</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+
+            <div class='botao'>
+                <div class='empty'></div>
+                <h1 id='taskHeader'>Tasks</h1>
+                <button data-modal-target="#new_task" class='botao_add' id='modal_open'>+</button>
+            </div>
+            <div class="taskTable">
+                <table id='taskTable'>
+                    <thead>
+                        <tr>
+                            <th hidden>ID</th>
+                            <th></th>
+                            <th>Task</th>
+                            <th>Project</th>
+                            <th>Description</th>
+                            <th>Due Date</th>
+                            <th>Priority</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id='taskstbody'>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="footer">
+        <span>Odin's Task Manager - Since 2022</span>
+    </div>
+
+    <script src="../src/index.js" type='module'></script>
+
+</body>
+<center>
+</center>
