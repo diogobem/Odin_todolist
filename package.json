@@ -1,0 +1,27 @@
+{
+  "name": "odin_todolist",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000O\u0000d\u0000i\u0000n\u0000_\u0000t\u0000o\u0000d\u0000o\u0000l\u0000i\u0000s\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogobem/Odin_todolist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogobem/Odin_todolist/issues"
+  },
+  "homepage": "https://github.com/diogobem/Odin_todolist#readme",
+  "devDependencies": {
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "moment": "^2.29.1",
+    "moment-es6": "^1.0.0"
+  }
+}
